@@ -18,6 +18,10 @@
     <string name="home_empty">Aucune station disponible pour cette ambiance.</string>
     <string name="home_logout">Déconnexion</string>
     <string name="home_retry">Réessayer</string>
+    <string name="local_network_permission_title">Connexion au serveur local</string>
+    <string name="local_network_permission_description">Android demande votre autorisation avant que Tunetalk se connecte à un serveur sur le réseau local. Cette connexion permet de joindre l’adresse d’API configurée, par exemple l’émulateur vers 10.0.2.2.</string>
+    <string name="local_network_permission_button">Autoriser le réseau local</string>
+    <string name="local_network_permission_settings">Ouvrir les paramètres de l’application</string>
     <string name="channel_listen">Écouter</string>
     <string name="channel_now_live">RADIO EN DIRECT</string>
     <string name="room_listeners">%1$d connecté(s)</string>

@@ -20,6 +20,16 @@ Prérequis : Android Studio avec le SDK stable Android 37.2 (API 37), Java 25 et
 .\gradlew.bat testDebugUnitTest lintDebug assembleDebug
 ```
 
+Pour vérifier la connexion réelle entre l’émulateur et une API locale, démarrez l’API, gardez un émulateur Android ouvert, puis exécutez aussi :
+
+```powershell
+.\gradlew.bat connectedDebugAndroidTest
+```
+
+Le test confirme que la liste des genres arrive via Retrofit et que l’endpoint de connexion renvoie bien `401` pour un compte de test inconnu (ce qui distingue un refus d’authentification d’une panne réseau).
+
+Sur Android 17 / API 37, Tunetalk demande l’autorisation **Réseau local** avant d’accéder à une URL privée (dont `10.0.2.2`). Autorisez-la pour utiliser l’API de développement ; une URL d’API publique ne déclenche pas cette demande.
+
 L’URL par défaut est `http://10.0.2.2:5269/` (API sur l’hôte Windows, vue depuis l’émulateur). Pour une autre URL :
 
 ```powershell
