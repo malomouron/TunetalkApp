@@ -5,7 +5,9 @@ import android.os.Build
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import kotlinx.coroutines.runBlocking
+import malo.mrn.tunetalk.data.local.SessionStore
 import malo.mrn.tunetalk.data.remote.LoginRequestDto
+import malo.mrn.tunetalk.data.repository.AuthRepositoryImpl
 import malo.mrn.tunetalk.data.remote.TunetalkApi
 import org.junit.Assert.assertEquals
 import org.junit.Assert.fail
@@ -61,6 +63,31 @@ class ApiConnectivityInstrumentedTest {
             fail("An unknown test account should not authenticate.")
         } catch (exception: HttpException) {
             assertEquals(401, exception.code())
+        }
+    }
+
+    @Test
+    fun registrationResponseIsDecodedAndStoredWithoutCrashing() = runBlocking {
+        val instrumentation = InstrumentationRegistry.getInstrumentation()
+        val repository = AuthRepositoryImpl(
+            api = api,
+            sessionStore = SessionStore(instrumentation.targetContext)
+        )
+        val email = "registration-${System.currentTimeMillis()}@example.com"
+
+        try {
+            val session = repository.register(
+                displayName = "Registration Probe",
+                email = email,
+                password = "TuneTalk2026"
+            )
+
+            assertEquals(email, session.email)
+            assertEquals("Registration Probe", session.displayName)
+            assertEquals(2, session.accessToken.count { it == '.' })
+            assertEquals(session, repository.restoreSession())
+        } finally {
+            repository.logout()
         }
     }
 }

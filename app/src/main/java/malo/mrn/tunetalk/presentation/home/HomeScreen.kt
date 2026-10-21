@@ -166,7 +166,9 @@ fun HomeScreen(
 
             else -> LazyColumn(
                 verticalArrangement = Arrangement.spacedBy(12.dp),
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f)
             ) {
                 items(state.channels, key = RadioChannel::id) { channel ->
                     ChannelCard(channel = channel, onListen = { onJoinChannel(channel) })
