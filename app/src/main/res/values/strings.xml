@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Tunetalk</string>
+    <string name="tagline">La musique rassemble. La conversation continue.</string>
+    <string name="auth_login_title">Retrouve ta fréquence.</string>
+    <string name="auth_register_title">Entre dans le rythme.</string>
+    <string name="auth_display_name">Ton pseudo</string>
+    <string name="auth_email">Adresse e-mail</string>
+    <string name="auth_password">Mot de passe</string>
+    <string name="auth_login_button">Se connecter</string>
+    <string name="auth_register_button">Créer mon compte</string>
+    <string name="auth_switch_to_register">Nouveau ici ? Créer un compte</string>
+    <string name="auth_switch_to_login">Déjà membre ? Se connecter</string>
+    <string name="home_eyebrow">TA RADIO, TON SALON</string>
+    <string name="home_title">Écoute ensemble.</string>
+    <string name="home_subtitle">Choisis une ambiance et rejoins la conversation.</string>
+    <string name="home_genres">Ambiances</string>
+    <string name="home_channels">Salons en direct</string>
+    <string name="home_empty">Aucune station disponible pour cette ambiance.</string>
+    <string name="home_logout">Déconnexion</string>
+    <string name="home_retry">Réessayer</string>
+    <string name="channel_listen">Écouter</string>
+    <string name="channel_now_live">RADIO EN DIRECT</string>
+    <string name="room_listeners">%1$d connecté(s)</string>
+    <string name="room_chat_title">La conversation</string>
+    <string name="room_chat_placeholder">Écris un message…</string>
+    <string name="room_no_messages">Lance la conversation.</string>
+    <string name="room_connecting">Connexion au salon…</string>
+    <string name="room_stream_unavailable">Aucun flux HTTPS disponible pour cette station.</string>
+    <string name="room_player_connecting">Connexion au lecteur…</string>
+    <string name="room_player_error">La lecture de cette station a échoué.</string>
+    <string name="loading">Chargement…</string>
+</resources>

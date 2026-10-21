@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Tunetalk" parent="android:Theme.Material.NoActionBar">
+        <item name="android:colorAccent">@color/tune_purple</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/tune_background</item>
+        <item name="android:navigationBarColor">@color/tune_background</item>
+        <item name="android:windowBackground">@color/tune_background</item>
+    </style>
+</resources>
