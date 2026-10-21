@@ -4,7 +4,8 @@ import malo.mrn.tunetalk.domain.model.ChatMessage
 import malo.mrn.tunetalk.domain.model.Genre
 import malo.mrn.tunetalk.domain.model.RadioChannel
 import malo.mrn.tunetalk.domain.model.UserSession
-import java.time.Instant
+import java.time.OffsetDateTime
+import java.time.format.DateTimeParseException
 
 data class LoginRequestDto(
     val email: String,
@@ -23,12 +24,20 @@ data class AuthResponseDto(
     val email: String,
     val displayName: String
 ) {
-    fun toDomain(): UserSession = UserSession(
-        accessToken = accessToken,
-        email = email,
-        displayName = displayName,
-        expiresAtEpochSeconds = Instant.parse(expiresAt).epochSecond
-    )
+    fun toDomain(): UserSession {
+        val expirationEpochSeconds = try {
+            OffsetDateTime.parse(expiresAt).toEpochSecond()
+        } catch (exception: DateTimeParseException) {
+            throw IllegalArgumentException("The API returned an invalid token expiration.", exception)
+        }
+
+        return UserSession(
+            accessToken = accessToken,
+            email = email,
+            displayName = displayName,
+            expiresAtEpochSeconds = expirationEpochSeconds
+        )
+    }
 }
 
 data class GenreDto(

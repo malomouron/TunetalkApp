@@ -26,7 +26,7 @@ Pour vérifier la connexion réelle entre l’émulateur et une API locale, dém
 .\gradlew.bat connectedDebugAndroidTest
 ```
 
-Le test confirme que la liste des genres arrive via Retrofit et que l’endpoint de connexion renvoie bien `401` pour un compte de test inconnu (ce qui distingue un refus d’authentification d’une panne réseau).
+Les tests instrumentés vérifient la lecture des genres par Retrofit, un `401` pour un compte de test inconnu, le décodage/stockage de la session d’inscription et l’ouverture de l’accueil après création du compte.
 
 Sur Android 17 / API 37, Tunetalk demande l’autorisation **Réseau local** avant d’accéder à une URL privée (dont `10.0.2.2`). Autorisez-la pour utiliser l’API de développement ; une URL d’API publique ne déclenche pas cette demande.
 
