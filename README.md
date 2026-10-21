@@ -14,7 +14,7 @@ Radio Browser est un annuaire communautaire, pas un fournisseur licenciant les m
 
 ## Lancer l’application
 
-Prérequis : Android Studio/SDK Android 37, Java 25 et l’API en cours d’exécution. Démarrer l’API en suivant [`../TunetalkApi.Api/README.md`](../TunetalkApi.Api/README.md), puis lancer l’application sur un émulateur Android :
+Prérequis : Android Studio avec le SDK stable Android 37.2 (API 37), Java 25 et l’API en cours d’exécution. Démarrer l’API en suivant [`../TunetalkApi.Api/README.md`](../TunetalkApi.Api/README.md), puis lancer l’application sur un émulateur Android :
 
 ```powershell
 .\gradlew.bat testDebugUnitTest lintDebug assembleDebug
